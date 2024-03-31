@@ -1,0 +1,233 @@
+Screen_Manager:
+    Screen_Login:
+    Screen_LoginP:
+    Screen_Home:
+    Screen_Panel:
+
+<Screen_Login>:
+    name: "Login"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'bg.jpg'    
+    
+    MDCard:
+        size_hint: .35,.9
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+        #md_bg_color:(33/225, 29/225, 33/225,.85)
+        padding: 35
+        elevation: 5
+        spacing: 35
+        orientation: 'vertical'
+        
+        Image:
+            source: 'logo.png'
+            pos_hint: {'center_x': 0.5,'center_y': 0.3}
+            # Giving the size of image
+            size_hint_x: 0.9
+ 
+            # allow stretching of image
+            allow_stretch: True
+
+        MDLabel:
+            id: state
+            theme_text_color: 'Custom'
+            #text_color: app.theme_cls.primary_color
+            text_color:(0/225, 74/225, 173/225,1) 
+            text: "Fraud Check"
+            underline:True
+            bold:True
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            halign: 'center'
+            font_size: 40
+            padding_y: 15
+        
+        MDLabel:
+            id: state
+            theme_text_color: 'Custom'
+            #text_color: app.theme_cls.primary_color
+            text_color:(10/225, 4/225, 23/225,1) 
+            text: "Sign Up"
+            halign: 'center'
+            font_size: 45
+            padding_y: 15
+                
+        MDFillRoundFlatButton:
+            text:"Continue with Mail"
+            icon_right: "email"
+            font_size: 25 
+            pos_hint:{'center_x': .5}
+            on_press:
+                app.root.current = "LoginP"
+                root.manager.transition.direction = 'up'
+        MDLabel:
+            id: state
+            theme_text_color: 'Custom'
+            #text_color: app.theme_cls.primary_color
+            text_color:(10/225, 4/225, 23/225,1) 
+            text: "Or"
+            bold: True
+            halign: 'center'
+            font_size: 20
+            padding_y: 15
+
+        MDRoundFlatButton:
+            text:"Continue with No."
+            icon_right: "email"
+            font_size: 25 
+            pos_hint:{'center_x': .5}
+            on_press:
+                app.root.current = "LoginP"
+                root.manager.transition.direction = 'up'
+        MDLabel:
+            id: state
+            theme_text_color: 'Custom'
+            #text_color: app.theme_cls.primary_color
+            text_color:(0/225, 74/225, 173/225,1) 
+            #text: "Fraud Check"
+            underline:True
+            bold:True
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            halign: 'center'
+            font_size: 20
+            padding_y: 15
+
+<Screen_LoginP>:
+    name: "LoginP"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'bg.jpg'    
+    
+    MDCard:
+        size_hint: .35,.9
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+        #md_bg_color:(33/225, 29/225, 33/225,.85)
+        padding: 25
+        elevation: 5
+        spacing: 25
+        orientation: 'vertical'
+        
+        Image:
+            source: 'SignUp.png'
+            pos_hint: {'center_x': 0.3,'center_y': 0.1}
+            # Giving the size of image
+            size_hint_x: 0.7
+ 
+            # allow stretching of image
+            allow_stretch: True
+
+        
+        MDTextField:
+            mode: "round"
+            id: user_name
+            hint_text: "Name"
+            icon_right: "account"
+            theme_text_color: 'Custom'
+            text_color:(2/255, 23/255, 12/255,1)
+            size_hint_x: None
+            width: 200
+            font_size: 22
+            pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+            spacing: 20         
+        MDTextField:
+            mode: "round"
+            id: user_id
+            hint_text: "Mail"
+            icon_right: "mail"
+            theme_text_color: 'Custom'
+            text_color:(2/255, 23/255, 12/255,1)
+            size_hint_x: None
+            width: 200
+            font_size: 22
+            pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+            spacing: 20         
+        MDTextField:
+            mode: "round"
+            id: user_password
+            hint_text: "Password"
+            icon_right: "key"
+            password: True
+            theme_text_color: 'Custom'
+            text_color:(2/255, 23/255, 12/255,1)
+            size_hint_x: None
+            width: 200
+            font_size: 22
+            pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+            spacing: 20 
+        
+        MDFillRoundFlatButton:
+            text:"Continue"
+            icon_right: "email"
+            font_size: 25 
+            pos_hint:{'center_x': .5}
+            on_press:
+                app.root.current = "Home"
+                root.manager.transition.direction = 'up'
+
+<Screen_Home>:
+    name: "Home"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'bg.jpg'  
+    MDCard:
+        size_hint: .6,.9
+        pos_hint: {"center_x": 0.5 ,"center_y": 0.5}
+        #md_bg_color:(33/225, 29/225, 33/225,.85)
+        padding: 5
+        elevation: 5
+        spacing: 5
+        orientation: 'vertical'
+        
+        Image:
+            source: 'data.png'
+            pos_hint: {'center_x': 0.5,'center_y': 0.1}
+            # Giving the size of image
+            size_hint_x: 0.7
+ 
+            # allow stretching of image
+            allow_stretch: True
+        
+        Image:
+            source: 'graph.png'
+            pos_hint: {'center_x': 0.5,'center_y': 0.1}
+            # Giving the size of image
+            size_hint_x: 0.9
+ 
+            # allow stretching of image
+            allow_stretch: True
+        
+        MDLabel:
+            id: state
+            theme_text_color: 'Custom'
+            #text_color: app.theme_cls.primary_color
+            text_color:(0/225, 74/225, 173/225,1) 
+            bold:True
+            pos_hint: {'center_x': 0.5,'center_y': 0.4}
+            halign: 'center'
+            font_size: 18
+            padding_y: 15
+        
+        MDFillRoundFlatButton:
+
+            text:"Upload File"
+            icon_right: "email"
+            font_size: 25 
+            pos_hint:{'center_x': .5}
+            on_press:
+                app.fraud_check()
+
+        Image:
+            source: 'bar.png'
+            pos_hint: {'center_x': 0.5,'center_y': 0.1}
+            # Giving the size of image
+            size_hint_x: 0.9
+ 
+            # allow stretching of image
+            allow_stretch: True
+        
+
